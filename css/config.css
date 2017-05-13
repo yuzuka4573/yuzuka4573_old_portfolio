@@ -1,0 +1,49 @@
+html, body {
+  padding: 0;
+  margin: :0;
+  min-height: 100vh;
+  background: linear-gradient(-50deg,#e4e4e4, #6F80B0);
+}
+h3{
+  margin-top: 50px;
+}
+
+.big{
+  font-size: 45px;
+}
+.small{
+  font-size: 13px;
+}
+.mid{
+  font-size: 18px;
+}
+/*color*/
+.white{
+  color:(white);
+}
+.spt{
+  margin-top: 100px;
+}
+.spr{
+  margin-right: 50px;
+}
+.spl{
+  margin-left: 50px;
+}
+.spts{
+  margin-top: 30px;
+}
+.spts2{
+  margin-top: 100px;
+}
+.linkc{
+  color: #FFF;
+}
+.linkch:hover{
+  color:#e0e0e0;
+}
+.kotei{
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}

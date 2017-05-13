@@ -1,0 +1,8 @@
+{
+	"type": "Live2D Model Setting",
+	"name": "tize",
+	"model": "tize.moc",
+	"textures": [
+		"tize.512/texture_00.png"
+	]
+}
