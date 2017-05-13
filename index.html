@@ -1,12 +1,13 @@
 <!DOCTYPE>
 <html lang="ja">
+
 <head>
 	<title>Create The World</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
 
-<!-- CSSやJSの外部ファイルを読み込む／使わないならなくてもOK -->
-<!-- 今回は、コメントフォームで使っているので消さないでください -->
+	<!-- CSSやJSの外部ファイルを読み込む／使わないならなくてもOK -->
+	<!-- 今回は、コメントフォームで使っているので消さないでください -->
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<!-- [Bootstrap] Latest compiled and minified CSS -->
 	<!-- [Bootstrap] Optional theme -->
@@ -19,100 +20,96 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<!-- Bootflat -->
 	<script src="https://bootflat.github.io/bootflat/js/icheck.min.js"></script>
-  <script src="https://bootflat.github.io/bootflat/js/jquery.fs.selecter.min.js"></script>
-  <script src="https://bootflat.github.io/bootflat/js/jquery.fs.stepper.min.js"></script>
-<!-- CSSを直接書くことも可能です -->
-<!--	<style type="text/css">
-	</style> -->
-<!-- experiment live2d sdk-->
-<meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=1.0, maximum-scale=4.0">
-			</meta>
-			<style>
-					#glcanvas {
-ground-size: 150%;
-							background-position: 50% 50%;
-							/*background-image: url(assets/image/back_class_normal.png);*/
-					}
-					button {
-							font-family: Arial, Helvetica, sans-serif;
-							font-size: 9px;
-							color: #ffffff;
-							padding: 3px 9px;
-							-moz-border-radius: 13px;
-							-webkit-border-radius: 13px;
-							border-radius: 13px;
-							-moz-box-shadow:
-									0px 1px 3px rgba(0,0,0,0.5),
-									inset 0px 0px 1px rgba(255,255,255,0.7);
-							-webkit-box-shadow:
-									0px 1px 3px rgba(0,0,0,0.5),
-									inset 0px 0px 1px rgba(255,255,255,0.7);
-							box-shadow:
-									0px 1px 3px rgba(0,0,0,0.5),
-									inset 0px 0px 1px rgba(255,255,255,0.7);
-							text-shadow:
-									0px -1px 0px rgba(0,0,0,0.4),
-									0px 1px 0px rgba(255,255,255,0.3);
-					}
-					button.active {
-							background: linear-gradient(
-									to bottom,
-									#3498db,
-									#2980b9);
-							background: -moz-linear-gradient(
-									top,
-									#3498db 0%,
-									#2980b9);
-							background: -webkit-gradient(
-									linear, left top, left bottom,
-									from(#3498db),
-									to(#2980b9));
-							border: 1px solid #2980b9;
-					}
-					button.inactive {
-							background: linear-gradient(
-									to bottom,
-									#e74c3c,
-									#c0392b);
-							background: -moz-linear-gradient(
-									top,
-									#e74c3c 0%,
-									#c0392b);
-							background: -webkit-gradient(
-									linear, left top, left bottom,
-									from(#e74c3c),
-									to(#c0392b));
-							border: 1px solid #c0392b;
-					}
-			</style>
+	<script src="https://bootflat.github.io/bootflat/js/jquery.fs.selecter.min.js"></script>
+	<script src="https://bootflat.github.io/bootflat/js/jquery.fs.stepper.min.js"></script>
+	<!-- CSSを直接書くことも可能です -->
+	<!--	<style type="text/css">
+</style> -->
+	<!-- experiment live2d sdk-->
+	<meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=1.0, maximum-scale=4.0">
+	</meta>
+	<style>
+		#glcanvas {
+			ground-size: 150%;
+			background-position: 50% 50%;
+			/*background-image: url(assets/image/back_class_normal.png);*/
+		}
+
+		button {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 9px;
+			color: #ffffff;
+			padding: 3px 9px;
+			-moz-border-radius: 13px;
+			-webkit-border-radius: 13px;
+			border-radius: 13px;
+			-moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5),
+			inset 0px 0px 1px rgba(255, 255, 255, 0.7);
+			-webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5),
+			inset 0px 0px 1px rgba(255, 255, 255, 0.7);
+			box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5),
+			inset 0px 0px 1px rgba(255, 255, 255, 0.7);
+			text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4),
+			0px 1px 0px rgba(255, 255, 255, 0.3);
+		}
+
+		button.active {
+			background: linear-gradient( to bottom,
+			#3498db,
+			#2980b9);
+			background: -moz-linear-gradient( top,
+			#3498db 0%,
+			#2980b9);
+			background: -webkit-gradient( linear, left top, left bottom,
+			from(#3498db),
+			to(#2980b9));
+			border: 1px solid #2980b9;
+		}
+
+		button.inactive {
+			background: linear-gradient( to bottom,
+			#e74c3c,
+			#c0392b);
+			background: -moz-linear-gradient( top,
+			#e74c3c 0%,
+			#c0392b);
+			background: -webkit-gradient( linear, left top, left bottom,
+			from(#e74c3c),
+			to(#c0392b));
+			border: 1px solid #c0392b;
+		}
+	</style>
 	<!-- なんか-->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript">
-$(function(){
-	$('a[href^=#]').click(function(){
-		var speed = 250;
-		var href= $(this).attr("href");
-		var target = $(href == "#" || href == "" ? 'html' : href);
-		var position = target.offset().top;
-		$("html, body").animate({scrollTop:position}, speed, "swing");
-		return false;
-	});
-});
-</script>
+		$(function() {
+			$('a[href^=#]').click(function() {
+				var speed = 250;
+				var href = $(this).attr("href");
+				var target = $(href == "#" || href == "" ? 'html' : href);
+				var position = target.offset().top;
+				$("html, body").animate({
+					scrollTop: position
+				}, speed, "swing");
+				return false;
+			});
+		});
+	</script>
 </head>
+
 <body id="top" onload="sampleApp1();">
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
 				<a class="navbar-brand" href="#">
-					Create The World
-				</a>
+										Create The World
+									</a>
 			</div>
 			<div class="collapse navbar-collapse" id="navbar">
 				<ul class="nav navbar-nav navbar-right">
@@ -125,178 +122,133 @@ $(function(){
 		</div>
 	</nav>
 	<div class="container">
-<p class="spt" >
-	<img src="images/pic.png" class="img-responsive img-rounded" alt="top" ></p>
-<p  id="about" class="spts2"> </p>
-<h1 class="glyphicon glyphicon-flag spts2" aria-hidden="true" id="about">About</h1>
-<div class="mid" >
-<h3>HandleName :Rei Fumitsuki</h3>
-<p class="spts">自由気ままにPCを酷使して、映像作品等を作る人。</p>
-<p>思考回路が「なかったらなるべく自分で作る」となっており、よく無茶なことをする</p>
-<p>いろんなところに変なこだわりのある作品を作ることが多い</p>
-<p>最近は3Dプリンタでの創作にはまっていて１週間の大半を3Dプリンタとモデリングに費やしている</p>
-<p>零関連のページ類</p>
-<p><a href="http://atelier-rei.azurewebsites.net" class="linkc linkch">rei's blog "atelier-rei"  </a></p>
-<p><a href="http://www.123dapp.com/MyCorner/reireifumitsuki-29062140/recentActivity" class="linkc linkch">rei's Autodesk 123Dapp.com page  </a></p>
-</div>
-<p id="works"></p>
-<div class="spts2" >
-<h1 class="glyphicon glyphicon-flag" aria-hidden="true">Works</h1>
-<p>過去作品と現在進行中のプロジェクトデス。</p>
-<p class="mid spts">札幌地下歩行空間　6面ディスプレイ映像作品</p>
-<div class="progress">
-	<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width: 100%;">
-		Completed...
-	</div>
-</div>
-<p class="small">More Information: <a href="http://www.sapporo-north2.com/sn2awardsiaf2014.html" class="linkc linkch">Sapporo-north2 award siaf 2014</a></p>
-<p class="mid spts">Frenz 2016 映像作品提出</p>
-<div class="progress">
-	<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width: 10%;">
-		10% Completed...
-	</div>
-</div>
-<p class="small">More Information: <a href="http://frenz.jp/" class="linkc linkch">Frenz 2015 Official Page</a></p>
-<p class="mid spts">NHK Eテレ　「TECHNE 映像の教室」 TechneID提出</p>
-<div class="progress">
-	<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width: 100%;">
-		100% Completed...
-	</div>
-</div>
-<p class="small">More Information: <a href="https://www.nhk.or.jp/bijutsu/techne/" class="linkc linkch">Techne Official Page  </a>  </p>
-<p class="small">
-<a href="https://youtu.be/NZA0TlkfQ2k" class="linkc linkch">Techne ID 001  </a>
-<span style="margin-right: 120px;"></span>
-<a href="https://youtu.be/mEIo-yKGiZk" class="linkc linkch">Techne ID 002  </a>
-<span style="margin-right: 120px;"></span>
-<a href="https://youtu.be/8A6PzT2WjOA" class="linkc linkch">Techne ID 003  </a>
-<span style="margin-right: 120px;"></span>
-<a href="https://youtu.be/JAAPIeV8CyI" class="linkc linkch">Techne ID 004  </a>
-</p>
-<p class="small">結果　　：全滅</p>
-<p class="mid spts">FabLab 3Dprinter template model making project(仮)</p>
-<div class="progress">
-	<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width: 100%;">
-		Nan% Completed...
-	</div>
-</div>
-<p class="small">More Information: 大学の3Dプリンタをもっと使って欲しいのであったらいい3Dデータのサンプル制作。多分一生終わらない企画。</p>
-<p class="small">追記　　最近fablab系企画関連でお話通りそうになってきたので全力で推してます</p>
-<div class="spt">
-
- <h2>更新履歴</h2>
- <p>下に行くほど最新ﾃﾞｽ｡</P>
-	<table class="table">
-	<thead>
-		<tr>
-			<th>日にち</th>
-			<th>更新内容</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<th>2016/01/8</th>
-			<td>サイトアップロード</td>
-		</tr>
-		<tr>
-			<th>2016/01/11</th>
-			<td>Live2Dのモデルデータ更新<br>モーション試験的に導入(動作してない…？)<br>PC版サイトのLive2Dモデル枠拡大<br>Worksの内容ほんの少し変更<br>コメントシステムのバグ除去</td>
-		</tr>
-		<tr>
-			<th>2016/02/05</th>
-			<td>Techne_IDを応募をしたため詳細を追加 <br>コメント機能修正、名前かコメントが空白だと送信されないようにした<br>ほんの少しtopの画像修正</td>
-		</tr>
-		<tr>
-			<th>2016/02/06</th>
-			<td>Techne_IDを2動画アップロードに伴いリンクの追加と場所修正。progressを75% -> 85%へ<br>新たにプロジェクトを追加</td>
-		</tr>
-		<tr>
-			<th>2016/05/25</th>
-			<td>別サイトにブログ開設したのでリンク貼り</td>
-		</tr>
-	</tbody>
-</table>
-</div>
-<!-- ここからコメントフォーム関係／コメントフォームはアップロードしないと動かないです -->
-<script src="js/comment_form.js" ></script>
-<div id="comment_box" class="container spts2">
-	<div class="page-header">
-		<h2 id="com">>Comment form</h2>
-	</div>
-	<div class="row">
-		<div id="form" class="col-sm-4 ">
-			<div class="form-group">
-				<label for="name">Name</label>
-				<input type="text" name="name" class="form-control" id="comment_name">
-			</div>
-			<div class="form-group">
-				<label for="comment_body">Comment</label>
-				<textarea name="body" id="comment_body" class="form-control" rows="5"></textarea>
-			</div>
-			<div class="form-group">
-				<button type="button" id="submit" class="btn btn-default">Submit</button>
-			</div>
+		<p class="spt">
+			<img src="images/pic.png" class="img-responsive img-rounded" alt="top"></p>
+		<p id="about" class="spts2"> </p>
+		<h1 class="glyphicon glyphicon-flag spts2" aria-hidden="true" id="about">About</h1>
+		<div class="mid">
+			<h3>HandleName :Rei Fumitsuki</h3>
+			<p class="spts">自由気ままにPCを酷使して、映像作品等を作る人。</p>
+			<p>思考回路が「なかったらなるべく自分で作る」となっており、よく無茶なことをする</p>
+			<p>いろんなところに変なこだわりのある作品を作ることが多い</p>
+			<p>最近は3Dプリンタでの創作にはまっていて１週間の大半を3Dプリンタとモデリングに費やしている</p>
+			<p>零関連のページ類</p>
+			<p><a href="http://atelier-rei.azurewebsites.net" class="linkc linkch">rei's blog "atelier-rei"  </a></p>
+			<p><a href="http://www.123dapp.com/MyCorner/reireifumitsuki-29062140/recentActivity" class="linkc linkch">rei's Autodesk 123Dapp.com page  </a></p>
 		</div>
-		<div id="comment_list" class="col-sm-8">
-			<div class="row"></div>
-		</div>
-	</div>
-</div>
-<!-- ここまでコメントフォーム関係 -->
-<div class="kotei">
-	<p class="small">
-			<button id="btnChange" class="active">Change Model</button>
-	</p>
+		<p id="works"></p>
+		<div class="spts2">
+			<h1 class="glyphicon glyphicon-flag" aria-hidden="true">Works</h1>
+			<p>過去作品と現在進行中のプロジェクトデス。</p>
+			<p class="mid spts">札幌地下歩行空間　6面ディスプレイ映像作品</p>
+			<div class="progress">
+				<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width: 100%;">
+					Completed...
+				</div>
+			</div>
+			<p class="small">More Information: <a href="http://www.sapporo-north2.com/sn2awardsiaf2014.html" class="linkc linkch">Sapporo-north2 award siaf 2014</a></p>
+			<p class="mid spts">Frenz 2016 映像作品提出</p>
+			<div class="progress">
+				<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width: 10%;">
+					10% Completed...
+				</div>
+			</div>
+			<p class="small">More Information: <a href="http://frenz.jp/" class="linkc linkch">Frenz 2015 Official Page</a></p>
+			<p class="mid spts">NHK Eテレ　「TECHNE 映像の教室」 TechneID提出</p>
+			<div class="progress">
+				<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width: 100%;">
+					100% Completed...
+				</div>
+			</div>
+			<p class="small">More Information: <a href="https://www.nhk.or.jp/bijutsu/techne/" class="linkc linkch">Techne Official Page  </a> </p>
+			<p class="small">
+				<a href="https://youtu.be/NZA0TlkfQ2k" class="linkc linkch">Techne ID 001  </a>
+				<span style="margin-right: 120px;"></span>
+				<a href="https://youtu.be/mEIo-yKGiZk" class="linkc linkch">Techne ID 002  </a>
+				<span style="margin-right: 120px;"></span>
+				<a href="https://youtu.be/8A6PzT2WjOA" class="linkc linkch">Techne ID 003  </a>
+				<span style="margin-right: 120px;"></span>
+				<a href="https://youtu.be/JAAPIeV8CyI" class="linkc linkch">Techne ID 004  </a>
+			</p>
+			<p class="small">結果　　：全滅</p>
+			<p class="mid spts">FabLab 3Dprinter template model making project(仮)</p>
+			<div class="progress">
+				<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width: 100%;">
+					Nan% Completed...
+				</div>
+			</div>
+			<p class="small">More Information: 大学の3Dプリンタをもっと使って欲しいのであったらいい3Dデータのサンプル制作。多分一生終わらない企画。</p>
+			<p class="small">追記　　最近fablab系企画関連でお話通りそうになってきたので全力で推してます</p>
+			<div class="spt">
 
-	<div >
-			<canvas id="glcanvas" width="250px" height="300px"
-					style="border:dashed 1px #CCC">
-			</canvas>
-	</div>
+				<h2>更新履歴</h2>
+				<p>下に行くほど最新ﾃﾞｽ｡</P>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>日にち</th>
+							<th>更新内容</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>2016/01/8</th>
+							<td>サイトアップロード</td>
+						</tr>
+						<tr>
+							<th>2016/01/11</th>
+							<td>Live2Dのモデルデータ更新<br>モーション試験的に導入(動作してない…？)<br>PC版サイトのLive2Dモデル枠拡大<br>Worksの内容ほんの少し変更<br>コメントシステムのバグ除去</td>
+						</tr>
+						<tr>
+							<th>2016/02/05</th>
+							<td>Techne_IDを応募をしたため詳細を追加 <br>コメント機能修正、名前かコメントが空白だと送信されないようにした<br>ほんの少しtopの画像修正</td>
+						</tr>
+						<tr>
+							<th>2016/02/06</th>
+							<td>Techne_IDを2動画アップロードに伴いリンクの追加と場所修正。progressを75% -> 85%へ<br>新たにプロジェクトを追加</td>
+						</tr>
+						<tr>
+							<th>2016/05/25</th>
+							<td>別サイトにブログ開設したのでリンク貼り</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 
-
-
-	<!-- Live2D Library -->
-	<script src="lib/live2d.min.js"></script>
-
-	<!-- Live2D Framework -->
-	<script src="framework/Live2DFramework.js"></script>
-
-	<!-- User's Script -->
-	<script src="src/utils/MatrixStack.js"></script>
-	<script src="src/utils/ModelSettingJson.js"></script>
-	<script src="src/PlatformManager.js"></script>
-	<script src="src/LAppDefine.js"></script>
-	<script src="src/LAppModel.js"></script>
-	<script src="src/LAppLive2DManager.js"></script>
-	<script src="src/SampleApp1.js"></script>
-
-</div>
-
-<!--
-<div class="spt">
-<form action="./php/code.php" method="post" class="form-horizontal" autocomplete="off">
-<div class="form-group col-xs-4">
-		<label class="control-label" for="usage4input2">Extra</label>
-		<input  type="password" class="form-control" id="passcode" name="passcode" placeholder="system key">
-		<span id="helpBlock" class="help-block">Please type system key</span>
-	</div>
-
-<button class="btn btn-info" id="submit">submit</button>
-</form>
-</div>
-
-
--->
-
-<!-- </div>-->
-<footer class="text-center container-fluid bFoot spts2">
-			<div class="container">
-				<p style="margin-top: 30px;">
-					<span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> 2015-2016 atelier-rei
+			<div class="kotei">
+				<p class="small">
+					<button id="btnChange" class="active">Change Model</button>
 				</p>
+
+				<div>
+					<canvas id="glcanvas" width="250px" height="300px" style="border:dashed 1px #CCC">
+											</canvas>
+				</div>
+
+				<!-- Live2D Library -->
+				<script src="lib/live2d.min.js"></script>
+
+				<!-- Live2D Framework -->
+				<script src="framework/Live2DFramework.js"></script>
+
+				<!-- User's Script -->
+				<script src="src/utils/MatrixStack.js"></script>
+				<script src="src/utils/ModelSettingJson.js"></script>
+				<script src="src/PlatformManager.js"></script>
+				<script src="src/LAppDefine.js"></script>
+				<script src="src/LAppModel.js"></script>
+				<script src="src/LAppLive2DManager.js"></script>
+				<script src="src/SampleApp1.js"></script>
+
 			</div>
-		</footer>
+
+			<footer class="text-center container-fluid bFoot spts2">
+				<div class="container">
+					<p style="margin-top: 30px;">
+						<span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> 2015-2016 atelier-rei
+					</p>
+				</div>
+			</footer>
 </body>
 
 </html>
